@@ -1,7 +1,15 @@
 {
   "name": "alexahandler",
   "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Stackery",
+  "license": "ISC",
   "devDependencies": {
     "aws-sdk": "~2"
+  },
+  "dependencies": {
+    "ask-sdk-core": "^2.10.1",
+    "ask-sdk-model": "^1.34.1"
   }
 }
