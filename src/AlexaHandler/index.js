@@ -311,21 +311,21 @@ const data = [
   {ServiceName: 'Route 53', ServiceType: 'Networking & Content Delivery', LaunchDate: '2010-12', Abbreviation: "No abbreviation. It's like Route 66, but with more traffic"},
   {ServiceName: 'Elastic Beanstalk', ServiceType: 'Compute', LaunchDate: '2011-01', Abbreviation: 'No abbreviation. Not the one Jack climbed'},
   {ServiceName: 'Simple Email Service', ServiceType: 'Application Integration', LaunchDate: '2011-01', Abbreviation: 'SES'},
-  {ServiceName: 'CloudFormation', ServiceType: 'Management & Governance', LaunchDate: '2011-02', Abbreviation: 'No abreviation here, just yet another service that starts with cloud'},
-  {ServiceName: 'Identity & Access Management', ServiceType: 'Security, Identity & Compliance', LaunchDate: '2011-05', Abbreviation: 'No abbreviation. I am so happy IAM exists'},
+  {ServiceName: 'CloudFormation', ServiceType: 'Management & Governance', LaunchDate: '2011-02', Abbreviation: 'No abbreviation here, just yet another service that starts with cloud'},
+  {ServiceName: 'Identity & Access Management', ServiceType: 'Security, Identity & Compliance', LaunchDate: '2011-05', Abbreviation: 'No abbreviation, but I am so happy IAM exists'},
   {ServiceName: 'Virtual Public Cloud', ServiceType: 'Networking & Content Delivery', LaunchDate: '2011-08', Abbreviation: 'VPC'},
-  {ServiceName: 'Direct Connect', ServiceType: 'Networking & Content Delivery', LaunchDate: '2011-08', Abbreviation: 'Connect directly, no abbreviation needed'},
+  {ServiceName: 'Direct Connect', ServiceType: 'Networking & Content Delivery', LaunchDate: '2011-08', Abbreviation: 'No abbreviation, just a direct connection.'},
   {ServiceName: 'ElastiCache', ServiceType: 'Database', LaunchDate: '2011-08', Abbreviation: 'No abbreviation here, just another elastic service. What are the odds?'},
-  {ServiceName: 'DynamoDB', ServiceType: 'Database', LaunchDate: '2012-01', Abbreviation: 'No abbreviation here, but Dynamo is dynamite!'},
-  {ServiceName: 'CloudSearch', ServiceType: 'Analytics', LaunchDate: '2012-04', Abbreviation: 'No abreviation here, just yet another service that starts with cloud'},
+  {ServiceName: 'DynamoDB', ServiceType: 'Database', LaunchDate: '2012-01', Abbreviation: 'No abbreviation here, but amazingly this service does not include the words cloud or elastic'},
+  {ServiceName: 'CloudSearch', ServiceType: 'Analytics', LaunchDate: '2012-04', Abbreviation: 'No abbreviation here, just yet another service that starts with cloud'},
   {ServiceName: 'Redshift', ServiceType: 'Database', LaunchDate: '2012-11', Abbreviation: 'No abbreviation here, but amazingly this service does not include the words cloud or elastic'},
   {ServiceName: 'Relational Database', ServiceType: 'Database', LaunchDate: '2013-06', Abbreviation: 'RDS'},
-  {ServiceName: 'CloudTrail', ServiceType: 'Management & Governance', LaunchDate: '2013-11', Abbreviation: 'No abreviation here, just yet another service that starts with cloud'},
-  {ServiceName: 'Kinesis', ServiceType: 'Analytics', LaunchDate: '2013-12', Abbreviation: "No abbreviation here, but it's a service that doesn't start with simple, who knew"},
+  {ServiceName: 'CloudTrail', ServiceType: 'Management & Governance', LaunchDate: '2013-11', Abbreviation: 'No abbreviation here, just yet another service that starts with cloud'},
+  {ServiceName: 'Kinesis', ServiceType: 'Analytics', LaunchDate: '2013-12', Abbreviation: "No abbreviation here, but it's a service that doesn't start with simple, who knew?"},
   {ServiceName: 'Cognito', ServiceType: 'Security, Identity & Compliance', LaunchDate: '2014-07', Abbreviation: "No abbreviation here, but there's no need to go incognito with Cognito"},
   {ServiceName: 'Lambda', ServiceType: 'Compute', LaunchDate: '2015-04', Abbreviation: 'No abbreviation here, just the little function that started it all'},
   {ServiceName: 'Elastic Container Service', ServiceType: 'Compute', LaunchDate: '2015-04', Abbreviation: 'ECS'},
-  {ServiceName: 'API Gateway', ServiceType: 'Networking & Content Delivery', LaunchDate: '2015-07', Abbreviation: 'I suppose API is an abbreviation'},
+  {ServiceName: 'API Gateway', ServiceType: 'Networking & Content Delivery', LaunchDate: '2015-07', Abbreviation: 'No abbreviation. Actually, I suppose API is an abbreviation'},
   {ServiceName: 'Elasticsearch Service', ServiceType: 'Analytics', LaunchDate: '2015-10', Abbreviation: 'No abbreviation here, just another elastic service. What are the odds?'},
   {ServiceName: 'Web Application Firewall', ServiceType: 'Security, Identity & Compliance', LaunchDate: '2015-10', Abbreviation: 'WAF'},
   {ServiceName: 'Elastic Container Registry', ServiceType: 'Compute', LaunchDate: '2015-12', Abbreviation: 'ECR'},
@@ -341,7 +341,8 @@ const data = [
   {ServiceName: 'Neptune', ServiceType: 'Database', LaunchDate: '2018-05', Abbreviation: 'No abbreviation here, but amazingly this service does not include the words cloud or elastic'},
   {ServiceName: 'Elastic Kubernetes Service', ServiceType: 'Compute', LaunchDate: '2018-06', Abbreviation: 'EKS'},
   {ServiceName: 'Event Bridge', ServiceType: 'Application Integration', LaunchDate: '2019-07', Abbreviation: 'No abbreviation here, but amazingly this service does not include the words cloud or elastic'},
-  {ServiceName: 'Timestream', ServiceType: 'Database', LaunchDate: '2020-09', Abbreviation: 'No abbreviation here, but amazingly this service does not include the words cloud or elastic'}
+  {ServiceName: 'Timestream', ServiceType: 'Database', LaunchDate: '2020-09', Abbreviation: 'No abbreviation here, but amazingly this service does not include the words cloud or elastic'},
+  {ServiceName: 'reInvent', ServiceType: 'Conference', LaunchDate: '2012-03', Abbreviation: 'No abbreviation. Did you know that the first re:Invent only had 6,000 attendees, while the last one had 60,000. Talk about ten ex-ing!'}
 ];
 
 const states = {
@@ -349,7 +350,7 @@ const states = {
   QUIZ: `_QUIZ`,
 };
 
-const welcomeMessage = `Welcome to the Stackery re:Invent Quiz Game!  You can ask me to tell you some fun AWS service facts, or you can ask me to start a quiz.  What would you like to do?`;
+const welcomeMessage = `Welcome to the Stackery re:Invent Quiz Game!  You can ask me to tell you about a specific service, or you can ask me to start a quiz.  What would you like to do?`;
 const startQuizMessage = `OK.  I will ask you 10 questions about AWS services. `;
 const exitSkillMessage = `Thank you for playing the Stackery re:Invent Quiz Game!  Please come back whenever you need a break from watching re:Invent sessions!`;
 const repromptSpeech = `Which AWS service would you like to know about?`;
@@ -405,8 +406,19 @@ function getBackgroundImage(label, height = 1024, width = 600) {
     .replace("{2}", label);
 }
 
+function convertDate(date) {
+  const fixedDate = (date.split('-')[0] + ' ' + parseInt(date.split('-')[1],10)).toString();
+  const newDate = new Date(fixedDate);
+
+  return newDate.toLocaleString('en-us', { month: "long" }) + ' ' + newDate.getFullYear();
+}
+
 function getSpeechDescription(item) {
-  return `${item.ServiceName} is a ${item.ServiceType} service, first launched in ${item.LaunchDate}. Its abbreviation is ${item.Abbreviation}. I've added ${item.ServiceName} to your Alexa app.  Which other service would you like to know about?`;
+  if (item.Abbreviation.includes('No abbreviation')) {
+    return `${item.ServiceName} is a ${item.ServiceType} service, first launched in ${convertDate(item.LaunchDate)}. ${item.Abbreviation}. I've added ${item.ServiceName} to your Alexa app.  Which other service would you like to know about?`;
+  } else {
+    return `${item.ServiceName} is a ${item.ServiceType} service, first launched in ${convertDate(item.LaunchDate)}. Its abbreviation is <say-as interpret-as='spell-out'>${item.Abbreviation}</say-as>. I've added ${item.ServiceName} to your Alexa app.  Which other service would you like to know about?`;
+  }
 }
 
 function formatCasing(key) {
@@ -426,7 +438,12 @@ function getQuestionWithoutOrdinal(property, item) {
 function getAnswer(property, item) {
   switch (property) {
     case 'Abbreviation':
-      return `The ${formatCasing(property)} of ${item.ServiceName} is <say-as interpret-as='spell-out'>${item[property]}</say-as>. `;
+      if (item[property].includes('No abbreviation')) {
+        return `${item[property]}. `;
+      } else {
+        return `The ${formatCasing(property)} of ${item.ServiceName} is <say-as interpret-as='spell-out'>${item[property]}</say-as>. `;
+      }
+      
     default:
       return `The ${formatCasing(property)} of ${item.ServiceName} is ${item[property]}. `;
   }
@@ -463,7 +480,9 @@ function askQuestion(handlerInput) {
 function compareSlots(slots, value) {
   for (const slot in slots) {
     if (Object.prototype.hasOwnProperty.call(slots, slot) && slots[slot].value !== undefined) {
-      if (slots[slot].value.toString().toLowerCase() === value.toString().toLowerCase()) {
+      // We want 'No abbreviation' to be a correct answer for items that start with 'No abbreviation'
+      // rather than the whole snarky answer, so partial answers will be accepted
+      if (value.toString().toLowerCase().contains(slots[slot].value.toString().toLowerCase())) {
         return true;
       }
     }
@@ -522,9 +541,6 @@ function getMultipleChoiceAnswers(currentIndex, item, property) {
   let answerList = [item[property]];
 
   // There's a possibility that we might get duplicate answers
-  // 8 states were founded in 1788
-  // 4 states were founded in 1889
-  // 3 states were founded in 1787
   // to prevent duplicates we need avoid index collisions and take a sample of
   // 8 + 4 + 1 = 13 answers (it's not 8+4+3 because later we take the unique
   // we only need the minimum.)

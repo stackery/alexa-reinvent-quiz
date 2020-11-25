@@ -74,7 +74,9 @@
             "and start a quiz",
             "and quiz me",
             "for a quiz",
-            "a quiz"
+            "a quiz",
+            "start the quiz",
+            "quiz"
           ],
           "slots": []
         }
@@ -297,6 +299,11 @@
               "name": {
                 "value": "Timestream"
               }
+            },
+            {
+              "name": {
+                "value": "reInvent"
+              }
             }
           ]
         },
@@ -356,6 +363,11 @@
             {
               "name": {
                 "value": "Mobile"
+              }
+            },
+            {
+              "name": {
+                "value": "Conference"
               }
             }
           ]
@@ -441,6 +453,71 @@
             {
               "name": {
                 "value": "No abbreviation"
+              }
+            },
+            {
+              "name": {
+                "value": "No abbreviation, because the CW is a TV network, not an AWS service"
+              }
+            },
+            {
+              "name": {
+                "value": "No abbreviation here, just yet another service that starts with cloud"
+              }
+            },
+            {
+              "name": {
+                "value": "No abbreviation. It's like Route 66, but with more traffic"
+              }
+            },
+            {
+              "name": {
+                "value": "No abbreviation. Not the one Jack climbed"
+              }
+            },
+            {
+              "name": {
+                "value": "No abbreviation, but I am so happy IAM exists"
+              }
+            },
+            {
+              "name": {
+                "value": "No abbreviation, just a direct connection"
+              }
+            },
+            {
+              "name": {
+                "value": "No abbreviation here, just another elastic service. What are the odds?"
+              }
+            },
+            {
+              "name": {
+                "value": "No abbreviation here, but amazingly this service does not include the words cloud or elastic"
+              }
+            },
+            {
+              "name": {
+                "value": "No abbreviation here, but it's a service that doesn't start with simple, who knew?"
+              }
+            },
+            {
+              "name": {
+                "value": "No abbreviation here, but there's no need to go incognito with Cognito"
+              }
+            },
+            {
+              "name": {
+                "value": "No abbreviation here, just the little function that started it all"
+              }
+            },
+            {
+              "name": {
+                "value": "No abbreviation. Actually, I suppose API is an abbreviation"
+              }
+            },
+            {
+              "name": {
+                "value": "No abbreviation, but did you know that the first re:Invent only had 6,000 attendees, while the last one had 60,000 attendees. Talk about ten ex-ing!"
               }
             }
           ]
