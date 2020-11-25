@@ -190,8 +190,8 @@ const QuizAnswerHandler = {
       .getResponse();
     }
     else {
-      const hasPerfectScore = attributes.quizScore === attributes.counter;
-      speakOutput += getFinalScore(attributes.quizScore, attributes.counter) + hasPerfectScore ? perfectScoreMessage : '' + exitSkillMessage;
+      const hasPerfectScore = attributes.quizScore === 10;
+      speakOutput += getFinalScore(attributes.quizScore, attributes.counter) + hasPerfectScore ? perfectScoreMessage + exitSkillMessage : exitSkillMessage;
       if(supportsDisplay(handlerInput)) {
         const title = 'Thank you for playing';
         const primaryText = new Alexa.RichTextContentHelper().withPrimaryText(getFinalScore(attributes.quizScore, attributes.counter)).getTextContent();
@@ -312,7 +312,7 @@ const data = [
   {ServiceName: 'Elastic Beanstalk', ServiceType: 'Compute', LaunchDate: '2011-01', Abbreviation: 'None'},
   {ServiceName: 'Simple Email Service', ServiceType: 'Application Integration', LaunchDate: '2011-01', Abbreviation: 'SES'},
   {ServiceName: 'Cloudformation', ServiceType: 'Management and Governance', LaunchDate: '2011-02', Abbreviation: 'None'},
-  {ServiceName: 'Identity And Access Management', ServiceType: 'Security, Identity and Compliance', LaunchDate: '2011-05', Abbreviation: 'None'},
+  {ServiceName: 'Identity And Access Management', ServiceType: 'Security Identity and Compliance', LaunchDate: '2011-05', Abbreviation: 'None'},
   {ServiceName: 'Virtual Public Cloud', ServiceType: 'Networking and Content Delivery', LaunchDate: '2011-08', Abbreviation: 'VPC'},
   {ServiceName: 'Direct Connect', ServiceType: 'Networking and Content Delivery', LaunchDate: '2011-08', Abbreviation: 'None'},
   {ServiceName: 'Elasticache', ServiceType: 'Database', LaunchDate: '2011-08', Abbreviation: 'None'},
@@ -322,12 +322,12 @@ const data = [
   {ServiceName: 'Relational Database', ServiceType: 'Database', LaunchDate: '2013-06', Abbreviation: 'RDS'},
   {ServiceName: 'Cloudtrail', ServiceType: 'Management and Governance', LaunchDate: '2013-11', Abbreviation: 'None'},
   {ServiceName: 'Kinesis', ServiceType: 'Analytics', LaunchDate: '2013-12', Abbreviation: 'None'},
-  {ServiceName: 'Cognito', ServiceType: 'Security, Identity and Compliance', LaunchDate: '2014-07', Abbreviation: 'None'},
+  {ServiceName: 'Cognito', ServiceType: 'Security Identity and Compliance', LaunchDate: '2014-07', Abbreviation: 'IAM'},
   {ServiceName: 'Lambda', ServiceType: 'Compute', LaunchDate: '2015-04', Abbreviation: 'None'},
   {ServiceName: 'Elastic Container Service', ServiceType: 'Compute', LaunchDate: '2015-04', Abbreviation: 'ECS'},
   {ServiceName: 'Api Gateway', ServiceType: 'Networking and Content Delivery', LaunchDate: '2015-07', Abbreviation: 'None'},
   {ServiceName: 'Elasticsearch Service', ServiceType: 'Analytics', LaunchDate: '2015-10', Abbreviation: 'None'},
-  {ServiceName: 'Web Application Firewall', ServiceType: 'Security, Identity and Compliance', LaunchDate: '2015-10', Abbreviation: 'WAF'},
+  {ServiceName: 'Web Application Firewall', ServiceType: 'Security Identity and Compliance', LaunchDate: '2015-10', Abbreviation: 'WAF'},
   {ServiceName: 'Elastic Container Registry', ServiceType: 'Compute', LaunchDate: '2015-12', Abbreviation: 'ECR'},
   {ServiceName: 'Elastic File System', ServiceType: 'Compute', LaunchDate: '2015-12', Abbreviation: 'EFS'},
   {ServiceName: 'Rekognition', ServiceType: 'Machine Learning', LaunchDate: '2016-11', Abbreviation: 'None'},
@@ -336,7 +336,7 @@ const data = [
   {ServiceName: 'Step Functions', ServiceType: 'Application Integration', LaunchDate: '2016-12', Abbreviation: 'None'},
   {ServiceName: 'Amplify', ServiceType: 'Mobile', LaunchDate: '2017-11', Abbreviation: 'None'},
   {ServiceName: 'Serverless Application Repository', ServiceType: 'Compute', LaunchDate: '2018-02', Abbreviation: 'SAR'},
-  {ServiceName: 'Secrets Manager', ServiceType: 'Security, Identity and Compliance', LaunchDate: '2018-04', Abbreviation: 'None'},
+  {ServiceName: 'Secrets Manager', ServiceType: 'Security Identity and Compliance', LaunchDate: '2018-04', Abbreviation: 'None'},
   {ServiceName: 'Appsync', ServiceType: 'Mobile', LaunchDate: '2018-04', Abbreviation: 'None'},
   {ServiceName: 'Neptune', ServiceType: 'Database', LaunchDate: '2018-05', Abbreviation: 'None'},
   {ServiceName: 'Elastic Kubernetes Service', ServiceType: 'Compute', LaunchDate: '2018-06', Abbreviation: 'EKS'},
@@ -458,6 +458,11 @@ function getBackgroundImage() {
         {
           url: getLargeImage(),
           size: 'LARGE'
+        },
+        {
+          url: 'https://raw.githubusercontent.com/stackery/alexa-reinvent-quiz/master/src/img/alexa-reinvent-medium.png',
+          size: 'MEDIUM',
+
         },
         {
           url: getSmallImage(),
