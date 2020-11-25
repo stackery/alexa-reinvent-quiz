@@ -100,7 +100,7 @@ const DefinitionHandler = {
       }
 
       if(supportsDisplay(handlerInput)) {
-        const image = new Alexa.ImageHelper().addImageInstance(getLargeImage());
+        const image = new Alexa.ImageHelper().addImageInstance(getBackgroundImage());
         const title = getCardTitle(item);
         const primaryText = new Alexa.RichTextContentHelper().withPrimaryText(getTextDescription(item, "<br/>")).getTextContent();
         response.addRenderTemplateDirective({
@@ -190,7 +190,8 @@ const QuizAnswerHandler = {
       .getResponse();
     }
     else {
-      speakOutput += getFinalScore(attributes.quizScore, attributes.counter) + exitSkillMessage;
+      const hasPerfectScore = attributes.quizScore === attributes.counter;
+      speakOutput += getFinalScore(attributes.quizScore, attributes.counter) + hasPerfectScore ? perfectScoreMessage : '' + exitSkillMessage;
       if(supportsDisplay(handlerInput)) {
         const title = 'Thank you for playing';
         const primaryText = new Alexa.RichTextContentHelper().withPrimaryText(getFinalScore(attributes.quizScore, attributes.counter)).getTextContent();
@@ -345,7 +346,7 @@ const data = [
 ];
 
 const funFacts = {
-  SimpleStorageService: "S3 was the first AWS service released, isnt that something!",
+  SimpleStorageService: "S3 was the first AWS service released, isn't that something!",
   SimpleQueueService: "SQS was the first AWS service announced, but the second released.",
   Simpledb: "Oh hey, yet another simple service thats not so simple.",
   ElasticBlockStore: "EBS has been trying to catch up to S3 from the start.",
@@ -400,6 +401,7 @@ const states = {
 const welcomeMessage = `Welcome to the Stackery re:Invent Quiz Game!  You can ask me to tell you about a specific service, or you can ask me to start a quiz.  What would you like to do?`;
 const startQuizMessage = `OK.  I will ask you 10 questions about AWS services. `;
 const exitSkillMessage = `Thank you for playing the Stackery re:Invent Quiz Game!  Please come back whenever you need a break from watching re:Invent sessions!`;
+const perfectScoreMessage = `<say-as interpret-as='interjection'>A perfect score!!</say-as><break strength='strong'/> Is your name Werner?`;
 const repromptSpeech = `Which AWS service would you like to know about?`;
 const helpMessage = `I know lots of things about AWS.  They are my parents, after all! You can ask me to tell you about an AWS service, and I'll tell you what I know.  You can also test your knowledge by asking me to start a quiz.  What would you like to do?`;
 const useCardsFlag = true;
@@ -426,11 +428,7 @@ function getCurrentScore(score, counter) {
 }
 
 function getFinalScore(score, counter) {
-  if (score === counter) {
-    return `Your final score is ${score} out of ${counter}. <say-as interpret-as='interjection'>A perfect score!!</say-as><break strength='strong'/> Is your name Werner? `;
-  } else {
-    return `Your final score is ${score} out of ${counter}. `;
-  }
+  return `Your final score is ${score} out of ${counter}. `;
 }
 
 function getCardTitle(item) {
@@ -453,7 +451,23 @@ function convertDate(date) {
 }
 
 function getBackgroundImage() {
-  return getLargeImage();
+  const imageObject = {
+    image: {
+      contentDescription: 'Stackery re:Invent Quiz background image',
+      sources: [
+        {
+          url: getLargeImage(),
+          size: 'LARGE'
+        },
+        {
+          url: getSmallImage(),
+          size: 'SMALL',
+
+        }
+      ]
+    }
+  }
+  return imageObject;
 }
 
 function getSpeechDescription(item) {
