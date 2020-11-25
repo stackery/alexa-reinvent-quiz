@@ -16,7 +16,41 @@ Resources:
       Tracing: Active
       Policies:
         - AWSXrayWriteOnlyAccess
+        - S3CrudPolicy:
+            BucketName: !Ref AlexaImages
+      Events:
+        AlexaSkillEvent:
+          Type: AlexaSkill
+          SkillId: !Ref alexaReinventSkillId
+      Environment:
+        Variables:
+          BUCKET_NAME: !Ref AlexaImages
+          BUCKET_ARN: !GetAtt AlexaImages.Arn
+  AlexaImages:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub ${AWS::StackName}-alexaimag-${AWS::AccountId}
+  AlexaImagesBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref AlexaImages
+      PolicyDocument:
+        Id: RequireEncryptionInTransit
+        Version: '2012-10-17'
+        Statement:
+          - Principal: '*'
+            Action: '*'
+            Effect: Deny
+            Resource:
+              - !GetAtt AlexaImages.Arn
+              - !Sub ${AlexaImages.Arn}/*
+            Condition:
+              Bool:
+                aws:SecureTransport: 'false'
 Parameters:
+  alexaReinventSkillId:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: /<EnvironmentName>/alexaReinventSkillId
   StackTagName:
     Type: String
     Description: Stack Name (injected by Stackery at deployment time)

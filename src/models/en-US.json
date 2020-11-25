@@ -1,0 +1,451 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "stackery reinvent quiz",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.PauseIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StartOverIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AnswerIntent",
+          "samples": [
+            "{ServiceName}",
+            "{ServiceType}",
+            "{LaunchDate}",
+            "{Abbreviation}",
+            "tell me about {ServiceName}",
+            "tell me about {ServiceType}",
+            "tell me about {LaunchDate}",
+            "tell me about {Abbreviation}",
+            "what do you know about {ServiceName}",
+            "what do you know about {ServiceType}",
+            "what do you know about {LaunchDate}",
+            "what do you know about {Abbreviation}",
+            "{ServiceName} information",
+            "{ServiceType} information",
+            "{LaunchDate} information",
+            "{Abbreviation} information"
+          ],
+          "slots": [
+            {
+              "name": "ServiceName",
+              "type": "AWS_SERVICE_NAME",
+              "samples": []
+            },
+            {
+              "name": "ServiceType",
+              "type": "AWS_SERVICE_TYPE",
+              "samples": []
+            },
+            {
+              "name": "LaunchDate",
+              "type": "AMAZON.DATE",
+              "samples": []
+            },
+            {
+              "name": "Abbreviation",
+              "type": "AWS_SERVICE_ABBR",
+              "samples": []
+            }
+          ]
+        },
+        {
+          "name": "QuizIntent",
+          "samples": [
+            "start a quiz",
+            "start a quiz game",
+            "and start a quiz",
+            "and quiz me",
+            "for a quiz",
+            "a quiz"
+          ],
+          "slots": []
+        }
+      ],
+      "types": [
+        {
+          "name": "AWS_SERVICE_NAME",
+          "values": [
+            {
+              "name": {
+                "value": "Simple Storage Service"
+              }
+            },
+            {
+              "name": {
+                "value": "Simple Queue Service"
+              }
+            },
+            {
+              "name": {
+                "value": "SimpleDB"
+              }
+            },
+            {
+              "name": {
+                "value": "Elastic Block Store"
+              }
+            },
+            {
+              "name": {
+                "value": "Elastic Compute Cloud"
+              }
+            },
+            {
+              "name": {
+                "value": "Elastic Map Reduce"
+              }
+            },
+            {
+              "name": {
+                "value": "CloudWatch"
+              }
+            },
+            {
+              "name": {
+                "value": "Elastic Load Balancing"
+              }
+            },
+            {
+              "name": {
+                "value": "Simple Notification Service"
+              }
+            },
+            {
+              "name": {
+                "value": "CloudFront"
+              }
+            },
+            {
+              "name": {
+                "value": "Route 53"
+              }
+            },
+            {
+              "name": {
+                "value": "Elastic Beanstalk"
+              }
+            },
+            {
+              "name": {
+                "value": "Simple Email Service"
+              }
+            },
+            {
+              "name": {
+                "value": "CloudFormation"
+              }
+            },
+            {
+              "name": {
+                "value": "Identity & Access Management"
+              }
+            },
+            {
+              "name": {
+                "value": "Virtual Public Cloud"
+              }
+            },
+            {
+              "name": {
+                "value": "Direct Connect"
+              }
+            },
+            {
+              "name": {
+                "value": "ElastiCache"
+              }
+            },
+            {
+              "name": {
+                "value": "DynamoDB"
+              }
+            },
+            {
+              "name": {
+                "value": "Redshift"
+              }
+            },
+            {
+              "name": {
+                "value": "Relational Database"
+              }
+            },
+            {
+              "name": {
+                "value": "CloudTrail"
+              }
+            },
+            {
+              "name": {
+                "value": "Kinesis"
+              }
+            },
+            {
+              "name": {
+                "value": "Cognito"
+              }
+            },
+            {
+              "name": {
+                "value": "Lambda"
+              }
+            },
+            {
+              "name": {
+                "value": "Elastic Container Service"
+              }
+            },
+            {
+              "name": {
+                "value": "API Gateway"
+              }
+            },
+            {
+              "name": {
+                "value": "Elasticsearch Service"
+              }
+            },
+            {
+              "name": {
+                "value": "Web Application Firewall"
+              }
+            },
+            {
+              "name": {
+                "value": "Elastic Container Registry"
+              }
+            },
+            {
+              "name": {
+                "value": "Elastic File System"
+              }
+            },
+            {
+              "name": {
+                "value": "Rekognition"
+              }
+            },
+            {
+              "name": {
+                "value": "Lightsail"
+              }
+            },
+            {
+              "name": {
+                "value": "CodeBuild"
+              }
+            },
+            {
+              "name": {
+                "value": "Step Functions"
+              }
+            },
+            {
+              "name": {
+                "value": "Amplify"
+              }
+            },
+            {
+              "name": {
+                "value": "Serverless Application Repository"
+              }
+            },
+            {
+              "name": {
+                "value": "Secrets Manager"
+              }
+            },
+            {
+              "name": {
+                "value": "AppSync"
+              }
+            },
+            {
+              "name": {
+                "value": "Neptune"
+              }
+            },
+            {
+              "name": {
+                "value": "Elastic Kubernetes Service"
+              }
+            },
+            {
+              "name": {
+                "value": "Event Bridge"
+              }
+            },
+            {
+              "name": {
+                "value": "Timestream"
+              }
+            }
+          ]
+        },
+        {
+          "name": "AWS_SERVICE_TYPE",
+          "values": [
+            {
+              "name": {
+                "value": "Storage"
+              }
+            },
+            {
+              "name": {
+                "value": "Application Integration"
+              }
+            },
+            {
+              "name": {
+                "value": "Database"
+              }
+            },
+            {
+              "name": {
+                "value": "Compute"
+              }
+            },
+            {
+              "name": {
+                "value": "Analytics"
+              }
+            },
+            {
+              "name": {
+                "value": "Management & Governance"
+              }
+            },
+            {
+              "name": {
+                "value": "Networking & Content Delivery"
+              }
+            },
+            {
+              "name": {
+                "value": "Security, Identity & Compliance"
+              }
+            },
+            {
+              "name": {
+                "value": "Machine Learning"
+              }
+            },
+            {
+              "name": {
+                "value": "Developer Tools"
+              }
+            },
+            {
+              "name": {
+                "value": "Mobile"
+              }
+            }
+          ]
+        },
+        {
+          "name": "AWS_SERVICE_ABBR",
+          "values": [
+            {
+              "name": {
+                "value": "S3"
+              }
+            },
+            {
+              "name": {
+                "value": "SQS"
+              }
+            },
+            {
+              "name": {
+                "value": "EC2"
+              }
+            },
+            {
+              "name": {
+                "value": "EMR"
+              }
+            },
+            {
+              "name": {
+                "value": "ELB"
+              }
+            },
+            {
+              "name": {
+                "value": "SNS"
+              }
+            },
+            {
+              "name": {
+                "value": "SES"
+              }
+            },
+            {
+              "name": {
+                "value": "VPC"
+              }
+            },
+            {
+              "name": {
+                "value": "RDS"
+              }
+            },
+            {
+              "name": {
+                "value": "ECS"
+              }
+            },
+            {
+              "name": {
+                "value": "WAF"
+              }
+            },
+            {
+              "name": {
+                "value": "ECR"
+              }
+            },
+            {
+              "name": {
+                "value": "EFS"
+              }
+            },
+            {
+              "name": {
+                "value": "SAR"
+              }
+            },
+            {
+              "name": {
+                "value": "EKS"
+              }
+            },
+            {
+              "name": {
+                "value": "No abbreviation"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

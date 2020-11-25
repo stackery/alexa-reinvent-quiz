@@ -298,56 +298,50 @@ const backgroundImagePath = "https://m.media-amazon.com/images/G/01/mobile-apps/
 const speechConsCorrect = ['Booya', 'All righty', 'Bam', 'Bazinga', 'Bingo', 'Boom', 'Bravo', 'Cha Ching', 'Cheers', 'Dynomite', 'Hip hip hooray', 'Hurrah', 'Hurray', 'Huzzah', 'Oh dear.  Just kidding.  Hurray', 'Kaboom', 'Kaching', 'Oh snap', 'Phew','Righto', 'Way to go', 'Well done', 'Whee', 'Woo hoo', 'Yay', 'Wowza', 'Yowsa'];
 const speechConsWrong = ['Argh', 'Aw man', 'Blarg', 'Blast', 'Boo', 'Bummer', 'Darn', "D'oh", 'Dun dun dun', 'Eek', 'Honk', 'Le sigh', 'Mamma mia', 'Oh boy', 'Oh dear', 'Oof', 'Ouch', 'Ruh roh', 'Shucks', 'Uh oh', 'Wah wah', 'Whoops a daisy', 'Yikes'];
 const data = [
-  {StateName: 'Alabama', Abbreviation: 'AL', Capital: 'Montgomery', StatehoodYear: 1819, StatehoodOrder: 22},
-  {StateName: 'Alaska', Abbreviation: 'AK', Capital: 'Juneau', StatehoodYear: 1959, StatehoodOrder: 49},
-  {StateName: 'Arizona', Abbreviation: 'AZ', Capital: 'Phoenix', StatehoodYear: 1912, StatehoodOrder: 48},
-  {StateName: 'Arkansas', Abbreviation: 'AR', Capital: 'Little Rock', StatehoodYear: 1836, StatehoodOrder: 25},
-  {StateName: 'California', Abbreviation: 'CA', Capital: 'Sacramento', StatehoodYear: 1850, StatehoodOrder: 31},
-  {StateName: 'Colorado', Abbreviation: 'CO', Capital: 'Denver', StatehoodYear: 1876, StatehoodOrder: 38},
-  {StateName: 'Connecticut', Abbreviation: 'CT', Capital: 'Hartford', StatehoodYear: 1788, StatehoodOrder: 5},
-  {StateName: 'Delaware', Abbreviation: 'DE', Capital: 'Dover', StatehoodYear: 1787, StatehoodOrder: 1},
-  {StateName: 'Florida', Abbreviation: 'FL', Capital: 'Tallahassee', StatehoodYear: 1845, StatehoodOrder: 27},
-  {StateName: 'Georgia', Abbreviation: 'GA', Capital: 'Atlanta', StatehoodYear: 1788, StatehoodOrder: 4},
-  {StateName: 'Hawaii', Abbreviation: 'HI', Capital: 'Honolulu', StatehoodYear: 1959, StatehoodOrder: 50},
-  {StateName: 'Idaho', Abbreviation: 'ID', Capital: 'Boise', StatehoodYear: 1890, StatehoodOrder: 43},
-  {StateName: 'Illinois', Abbreviation: 'IL', Capital: 'Springfield', StatehoodYear: 1818, StatehoodOrder: 21},
-  {StateName: 'Indiana', Abbreviation: 'IN', Capital: 'Indianapolis', StatehoodYear: 1816, StatehoodOrder: 19},
-  {StateName: 'Iowa', Abbreviation: 'IA', Capital: 'Des Moines', StatehoodYear: 1846, StatehoodOrder: 29},
-  {StateName: 'Kansas', Abbreviation: 'KS', Capital: 'Topeka', StatehoodYear: 1861, StatehoodOrder: 34},
-  {StateName: 'Kentucky', Abbreviation: 'KY', Capital: 'Frankfort', StatehoodYear: 1792, StatehoodOrder: 15},
-  {StateName: 'Louisiana', Abbreviation: 'LA', Capital: 'Baton Rouge', StatehoodYear: 1812, StatehoodOrder: 18},
-  {StateName: 'Maine', Abbreviation: 'ME', Capital: 'Augusta', StatehoodYear: 1820, StatehoodOrder: 23},
-  {StateName: 'Maryland', Abbreviation: 'MD', Capital: 'Annapolis', StatehoodYear: 1788, StatehoodOrder: 7},
-  {StateName: 'Massachusetts', Abbreviation: 'MA', Capital: 'Boston', StatehoodYear: 1788, StatehoodOrder: 6},
-  {StateName: 'Michigan', Abbreviation: 'MI', Capital: 'Lansing', StatehoodYear: 1837, StatehoodOrder: 26},
-  {StateName: 'Minnesota', Abbreviation: 'MN', Capital: 'St. Paul', StatehoodYear: 1858, StatehoodOrder: 32},
-  {StateName: 'Mississippi', Abbreviation: 'MS', Capital: 'Jackson', StatehoodYear: 1817, StatehoodOrder: 20},
-  {StateName: 'Missouri', Abbreviation: 'MO', Capital: 'Jefferson City', StatehoodYear: 1821, StatehoodOrder: 24},
-  {StateName: 'Montana', Abbreviation: 'MT', Capital: 'Helena', StatehoodYear: 1889, StatehoodOrder: 41},
-  {StateName: 'Nebraska', Abbreviation: 'NE', Capital: 'Lincoln', StatehoodYear: 1867, StatehoodOrder: 37},
-  {StateName: 'Nevada', Abbreviation: 'NV', Capital: 'Carson City', StatehoodYear: 1864, StatehoodOrder: 36},
-  {StateName: 'New Hampshire', Abbreviation: 'NH', Capital: 'Concord', StatehoodYear: 1788, StatehoodOrder: 9},
-  {StateName: 'New Jersey', Abbreviation: 'NJ', Capital: 'Trenton', StatehoodYear: 1787, StatehoodOrder: 3},
-  {StateName: 'New Mexico', Abbreviation: 'NM', Capital: 'Santa Fe', StatehoodYear: 1912, StatehoodOrder: 47},
-  {StateName: 'New York', Abbreviation: 'NY', Capital: 'Albany', StatehoodYear: 1788, StatehoodOrder: 11},
-  {StateName: 'North Carolina', Abbreviation: 'NC', Capital: 'Raleigh', StatehoodYear: 1789, StatehoodOrder: 12},
-  {StateName: 'North Dakota', Abbreviation: 'ND', Capital: 'Bismarck', StatehoodYear: 1889, StatehoodOrder: 39},
-  {StateName: 'Ohio', Abbreviation: 'OH', Capital: 'Columbus', StatehoodYear: 1803, StatehoodOrder: 17},
-  {StateName: 'Oklahoma', Abbreviation: 'OK', Capital: 'Oklahoma City', StatehoodYear: 1907, StatehoodOrder: 46},
-  {StateName: 'Oregon', Abbreviation: 'OR', Capital: 'Salem', StatehoodYear: 1859, StatehoodOrder: 33},
-  {StateName: 'Pennsylvania', Abbreviation: 'PA', Capital: 'Harrisburg', StatehoodYear: 1787, StatehoodOrder: 2},
-  {StateName: 'Rhode Island', Abbreviation: 'RI', Capital: 'Providence', StatehoodYear: 1790, StatehoodOrder: 13},
-  {StateName: 'South Carolina', Abbreviation: 'SC', Capital: 'Columbia', StatehoodYear: 1788, StatehoodOrder: 8},
-  {StateName: 'South Dakota', Abbreviation: 'SD', Capital: 'Pierre', StatehoodYear: 1889, StatehoodOrder: 40},
-  {StateName: 'Tennessee', Abbreviation: 'TN', Capital: 'Nashville', StatehoodYear: 1796, StatehoodOrder: 16},
-  {StateName: 'Texas', Abbreviation: 'TX', Capital: 'Austin', StatehoodYear: 1845, StatehoodOrder: 28},
-  {StateName: 'Utah', Abbreviation: 'UT', Capital: 'Salt Lake City', StatehoodYear: 1896, StatehoodOrder: 45},
-  {StateName: 'Vermont', Abbreviation: 'VT', Capital: 'Montpelier', StatehoodYear: 1791, StatehoodOrder: 14},
-  {StateName: 'Virginia', Abbreviation: 'VA', Capital: 'Richmond', StatehoodYear: 1788, StatehoodOrder: 10},
-  {StateName: 'Washington', Abbreviation: 'WA', Capital: 'Olympia', StatehoodYear: 1889, StatehoodOrder: 42},
-  {StateName: 'West Virginia', Abbreviation: 'WV', Capital: 'Charleston', StatehoodYear: 1863, StatehoodOrder: 35},
-  {StateName: 'Wisconsin', Abbreviation: 'WI', Capital: 'Madison', StatehoodYear: 1848, StatehoodOrder: 30},
-  {StateName: 'Wyoming', Abbreviation: 'WY', Capital: 'Cheyenne', StatehoodYear: 1890, StatehoodOrder: 44},
+  {ServiceName: 'Simple Storage Service', ServiceType: 'Storage', LaunchDate: '20-0603', Abbreviation: 'S3'},
+  {ServiceName: 'Simple Queue Service', ServiceType: 'Application Integration', LaunchDate: '2006-07', Abbreviation: 'SQS'},
+  {ServiceName: 'SimpleDB', ServiceType: 'Database', LaunchDate: '2007-12', Abbreviation: 'SimpleDB'},
+  {ServiceName: 'Elastic Block Store', ServiceType: 'Compute', LaunchDate: '2008-08', Abbreviation: 'EBS'},
+  {ServiceName: 'Elastic Compute Cloud', ServiceType: 'Storage', LaunchDate: '2008-10', Abbreviation: 'EC2'},
+  {ServiceName: 'Elastic Map Reduce', ServiceType: 'Analytics', LaunchDate: '2009-04', Abbreviation: 'EMR'},
+  {ServiceName: 'CloudWatch', ServiceType: 'Management & Governance', LaunchDate: '2009-05', Abbreviation: 'No abbreviation, because the CW is a TV network, not an AWS service'},
+  {ServiceName: 'Elastic Load Balancing', ServiceType: 'Networking & Content Delivery', LaunchDate: '2009-05', Abbreviation: 'ELB'},
+  {ServiceName: 'Simple Notification Service', ServiceType: 'Application Integration', LaunchDate: '2010-04', Abbreviation: 'SNS'},
+  {ServiceName: 'CloudFront', ServiceType: 'Networking & Content Delivery', LaunchDate: '2010-11', Abbreviation: 'No abbreviation here, just yet another service that starts with cloud'},
+  {ServiceName: 'Route 53', ServiceType: 'Networking & Content Delivery', LaunchDate: '2010-12', Abbreviation: "No abbreviation. It's like Route 66, but with more traffic"},
+  {ServiceName: 'Elastic Beanstalk', ServiceType: 'Compute', LaunchDate: '2011-01', Abbreviation: 'No abbreviation. Not the one Jack climbed'},
+  {ServiceName: 'Simple Email Service', ServiceType: 'Application Integration', LaunchDate: '2011-01', Abbreviation: 'SES'},
+  {ServiceName: 'CloudFormation', ServiceType: 'Management & Governance', LaunchDate: '2011-02', Abbreviation: 'No abreviation here, just yet another service that starts with cloud'},
+  {ServiceName: 'Identity & Access Management', ServiceType: 'Security, Identity & Compliance', LaunchDate: '2011-05', Abbreviation: 'No abbreviation. I am so happy IAM exists'},
+  {ServiceName: 'Virtual Public Cloud', ServiceType: 'Networking & Content Delivery', LaunchDate: '2011-08', Abbreviation: 'VPC'},
+  {ServiceName: 'Direct Connect', ServiceType: 'Networking & Content Delivery', LaunchDate: '2011-08', Abbreviation: 'Connect directly, no abbreviation needed'},
+  {ServiceName: 'ElastiCache', ServiceType: 'Database', LaunchDate: '2011-08', Abbreviation: 'No abbreviation here, just another elastic service. What are the odds?'},
+  {ServiceName: 'DynamoDB', ServiceType: 'Database', LaunchDate: '2012-01', Abbreviation: 'No abbreviation here, but Dynamo is dynamite!'},
+  {ServiceName: 'CloudSearch', ServiceType: 'Analytics', LaunchDate: '2012-04', Abbreviation: 'No abreviation here, just yet another service that starts with cloud'},
+  {ServiceName: 'Redshift', ServiceType: 'Database', LaunchDate: '2012-11', Abbreviation: 'No abbreviation here, but amazingly this service does not include the words cloud or elastic'},
+  {ServiceName: 'Relational Database', ServiceType: 'Database', LaunchDate: '2013-06', Abbreviation: 'RDS'},
+  {ServiceName: 'CloudTrail', ServiceType: 'Management & Governance', LaunchDate: '2013-11', Abbreviation: 'No abreviation here, just yet another service that starts with cloud'},
+  {ServiceName: 'Kinesis', ServiceType: 'Analytics', LaunchDate: '2013-12', Abbreviation: "No abbreviation here, but it's a service that doesn't start with simple, who knew"},
+  {ServiceName: 'Cognito', ServiceType: 'Security, Identity & Compliance', LaunchDate: '2014-07', Abbreviation: "No abbreviation here, but there's no need to go incognito with Cognito"},
+  {ServiceName: 'Lambda', ServiceType: 'Compute', LaunchDate: '2015-04', Abbreviation: 'No abbreviation here, just the little function that started it all'},
+  {ServiceName: 'Elastic Container Service', ServiceType: 'Compute', LaunchDate: '2015-04', Abbreviation: 'ECS'},
+  {ServiceName: 'API Gateway', ServiceType: 'Networking & Content Delivery', LaunchDate: '2015-07', Abbreviation: 'I suppose API is an abbreviation'},
+  {ServiceName: 'Elasticsearch Service', ServiceType: 'Analytics', LaunchDate: '2015-10', Abbreviation: 'No abbreviation here, just another elastic service. What are the odds?'},
+  {ServiceName: 'Web Application Firewall', ServiceType: 'Security, Identity & Compliance', LaunchDate: '2015-10', Abbreviation: 'WAF'},
+  {ServiceName: 'Elastic Container Registry', ServiceType: 'Compute', LaunchDate: '2015-12', Abbreviation: 'ECR'},
+  {ServiceName: 'Elastic File System', ServiceType: 'Compute', LaunchDate: '2015-12', Abbreviation: 'EFS'},
+  {ServiceName: 'Rekognition', ServiceType: 'Machine Learning', LaunchDate: '2016-11', Abbreviation: 'No abbreviation here, but amazingly this service does not include the words cloud or elastic'},
+  {ServiceName: 'Lightsail', ServiceType: 'Compute', LaunchDate: '2016-11', Abbreviation: 'No abbreviation here, but amazingly this service does not include the words cloud or elastic'},
+  {ServiceName: 'CodeBuild', ServiceType: 'Developer Tools', LaunchDate: '2016-12', Abbreviation: 'No abbreviation here, but amazingly this service does not include the words cloud or elastic'},
+  {ServiceName: 'Step Functions', ServiceType: 'Application Integration', LaunchDate: '2016-12', Abbreviation: 'No abbreviation here, but amazingly this service does not include the words cloud or elastic'},
+  {ServiceName: 'Amplify', ServiceType: 'Mobile', LaunchDate: '2017-11', Abbreviation: 'No abbreviation here, but amazingly this service does not include the words cloud or elastic'},
+  {ServiceName: 'Serverless Application Repository', ServiceType: 'Compute', LaunchDate: '2018-02', Abbreviation: 'SAR'},
+  {ServiceName: 'Secrets Manager', ServiceType: 'Security, Identity & Compliance', LaunchDate: '2018-04', Abbreviation: 'No abbreviation here, but amazingly this service does not include the words cloud or elastic'},
+  {ServiceName: 'AppSync', ServiceType: 'Mobile', LaunchDate: '2018-04', Abbreviation: 'No abbreviation here, but amazingly this service does not include the words cloud or elastic'},
+  {ServiceName: 'Neptune', ServiceType: 'Database', LaunchDate: '2018-05', Abbreviation: 'No abbreviation here, but amazingly this service does not include the words cloud or elastic'},
+  {ServiceName: 'Elastic Kubernetes Service', ServiceType: 'Compute', LaunchDate: '2018-06', Abbreviation: 'EKS'},
+  {ServiceName: 'Event Bridge', ServiceType: 'Application Integration', LaunchDate: '2019-07', Abbreviation: 'No abbreviation here, but amazingly this service does not include the words cloud or elastic'},
+  {ServiceName: 'Timestream', ServiceType: 'Database', LaunchDate: '2020-09', Abbreviation: 'No abbreviation here, but amazingly this service does not include the words cloud or elastic'}
 ];
 
 const states = {
@@ -355,11 +349,11 @@ const states = {
   QUIZ: `_QUIZ`,
 };
 
-const welcomeMessage = `Welcome to the United States Quiz Game!  You can ask me about any of the fifty states and their capitals, or you can ask me to start a quiz.  What would you like to do?`;
-const startQuizMessage = `OK.  I will ask you 10 questions about the United States. `;
-const exitSkillMessage = `Thank you for playing the United States Quiz Game!  Let's play again soon!`;
-const repromptSpeech = `Which other state or capital would you like to know about?`;
-const helpMessage = `I know lots of things about the United States.  You can ask me about a state or a capital, and I'll tell you what I know.  You can also test your knowledge by asking me to start a quiz.  What would you like to do?`;
+const welcomeMessage = `Welcome to the Stackery re:Invent Quiz Game!  You can ask me to tell you some fun AWS service facts, or you can ask me to start a quiz.  What would you like to do?`;
+const startQuizMessage = `OK.  I will ask you 10 questions about AWS services. `;
+const exitSkillMessage = `Thank you for playing the Stackery re:Invent Quiz Game!  Please come back whenever you need a break from watching re:Invent sessions!`;
+const repromptSpeech = `Which AWS service would you like to know about?`;
+const helpMessage = `I know lots of things about AWS.  They are my parents, after all! You can ask me to tell you about an AWS service, and I'll tell you what I know.  You can also test your knowledge by asking me to start a quiz.  What would you like to do?`;
 const useCardsFlag = true;
 
 /* HELPER FUNCTIONS */
@@ -388,7 +382,7 @@ function getFinalScore(score, counter) {
 }
 
 function getCardTitle(item) {
-  return item.StateName;
+  return item.ServiceName;
 }
 
 function getSmallImage(item) {
@@ -412,7 +406,7 @@ function getBackgroundImage(label, height = 1024, width = 600) {
 }
 
 function getSpeechDescription(item) {
-  return `${item.StateName} is the ${item.StatehoodOrder}th state, admitted to the Union in ${item.StatehoodYear}.  The capital of ${item.StateName} is ${item.Capital}, and the abbreviation for ${item.StateName} is <break strength='strong'/><say-as interpret-as='spell-out'>${item.Abbreviation}</say-as>.  I've added ${item.StateName} to your Alexa app.  Which other state or capital would you like to know about?`;
+  return `${item.ServiceName} is a ${item.ServiceType} service, first launched in ${item.LaunchDate}. Its abbreviation is ${item.Abbreviation}. I've added ${item.ServiceName} to your Alexa app.  Which other service would you like to know about?`;
 }
 
 function formatCasing(key) {
@@ -420,21 +414,21 @@ function formatCasing(key) {
 }
 
 function getQuestion(counter, property, item) {
-  return `Here is your ${counter}th question.  What is the ${formatCasing(property)} of ${item.StateName}?`;
+  return `Here is your ${counter}th question.  What is the ${formatCasing(property)} of ${item.ServiceName}?`;
 }
 
 // getQuestionWithoutOrdinal returns the question without the ordinal and is
 // used for the echo show.
 function getQuestionWithoutOrdinal(property, item) {
-  return "What is the " + formatCasing(property).toLowerCase() + " of "  + item.StateName + "?";
+  return "What is the " + formatCasing(property).toLowerCase() + " of "  + item.ServiceName + "?";
 }
 
 function getAnswer(property, item) {
   switch (property) {
     case 'Abbreviation':
-      return `The ${formatCasing(property)} of ${item.StateName} is <say-as interpret-as='spell-out'>${item[property]}</say-as>. `;
+      return `The ${formatCasing(property)} of ${item.ServiceName} is <say-as interpret-as='spell-out'>${item[property]}</say-as>. `;
     default:
-      return `The ${formatCasing(property)} of ${item.StateName} is ${item[property]}. `;
+      return `The ${formatCasing(property)} of ${item.ServiceName} is ${item[property]}. `;
   }
 }
 
