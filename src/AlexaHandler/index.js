@@ -47,7 +47,7 @@ const QuizHandler = {
     if (supportsDisplay(handlerInput)) {
       const title = `Question #${attributes.counter}`;
       const primaryText = new Alexa.RichTextContentHelper().withPrimaryText(getQuestionWithoutOrdinal(property, item)).getTextContent();
-      const backgroundImage = new Alexa.ImageHelper().addImageInstance(getBackgroundImage(attributes.quizItem.Abbreviation)).getImage();
+      const backgroundImage = new Alexa.ImageHelper().addImageInstance(getBackgroundImage());
       const itemList = [];
       getAndShuffleMultipleChoiceAnswers(attributes.selectedItemIndex, item, property).forEach((x, i) => {
         itemList.push(
@@ -95,12 +95,12 @@ const DefinitionHandler = {
         response.withStandardCard(
           getCardTitle(item),
           getTextDescription(item),
-          getSmallImage(item),
-          getLargeImage(item))
+          getSmallImage(),
+          getLargeImage())
       }
 
       if(supportsDisplay(handlerInput)) {
-        const image = new Alexa.ImageHelper().addImageInstance(getLargeImage(item)).getImage();
+        const image = new Alexa.ImageHelper().addImageInstance(getLargeImage());
         const title = getCardTitle(item);
         const primaryText = new Alexa.RichTextContentHelper().withPrimaryText(getTextDescription(item, "<br/>")).getTextContent();
         response.addRenderTemplateDirective({
@@ -166,7 +166,7 @@ const QuizAnswerHandler = {
       if (supportsDisplay(handlerInput)) {
         const title = `Question #${attributes.counter}`;
         const primaryText = new Alexa.RichTextContentHelper().withPrimaryText(getQuestionWithoutOrdinal(attributes.quizProperty, attributes.quizItem)).getTextContent();
-        const backgroundImage = new Alexa.ImageHelper().addImageInstance(getBackgroundImage(attributes.quizItem.Abbreviation)).getImage();
+        const backgroundImage = new Alexa.ImageHelper().addImageInstance(getBackgroundImage());
         const itemList = [];
         getAndShuffleMultipleChoiceAnswers(attributes.selectedItemIndex, attributes.quizItem, attributes.quizProperty).forEach((x, i) => {
           itemList.push(
@@ -293,8 +293,8 @@ const ErrorHandler = {
 
 /* CONSTANTS */
 const skillBuilder = Alexa.SkillBuilders.custom();
-const imagePath = "https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/quiz-game/state_flag/{0}x{1}/{2}._TTH_.png";
-const backgroundImagePath = "https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/quiz-game/state_flag/{0}x{1}/{2}._TTH_.png"
+const imagePath = "";
+const backgroundImagePath = ""
 const speechConsCorrect = ['Booya', 'All righty', 'Bam', 'Bazinga', 'Bingo', 'Boom', 'Bravo', 'Cha Ching', 'Cheers', 'Dynomite', 'Hip hip hooray', 'Hurrah', 'Hurray', 'Huzzah', 'Oh dear.  Just kidding.  Hurray', 'Kaboom', 'Kaching', 'Oh snap', 'Phew','Righto', 'Way to go', 'Well done', 'Whee', 'Woo hoo', 'Yay', 'Wowza', 'Yowsa'];
 const speechConsWrong = ['Argh', 'Aw man', 'Blarg', 'Blast', 'Boo', 'Bummer', 'Darn', "D'oh", 'Dun dun dun', 'Eek', 'Honk', 'Le sigh', 'Mamma mia', 'Oh boy', 'Oh dear', 'Oof', 'Ouch', 'Ruh roh', 'Shucks', 'Uh oh', 'Wah wah', 'Whoops a daisy', 'Yikes'];
 const data = [
@@ -386,24 +386,12 @@ function getCardTitle(item) {
   return item.ServiceName;
 }
 
-function getSmallImage(item) {
-  return `https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/quiz-game/state_flag/720x400/${item.Abbreviation}._TTH_.png`;
+function getSmallImage() {
+  return 'https://raw.githubusercontent.com/stackery/alexa-reinvent-quiz/master/src/img/alexa-reinvent-small.png';
 }
 
-function getLargeImage(item) {
-  return `https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/quiz-game/state_flag/1200x800/${item.Abbreviation}._TTH_.png`;
-}
-
-function getImage(height, width, label) {
-  return imagePath.replace("{0}", height)
-    .replace("{1}", width)
-    .replace("{2}", label);
-}
-
-function getBackgroundImage(label, height = 1024, width = 600) {
-  return backgroundImagePath.replace("{0}", height)
-    .replace("{1}", width)
-    .replace("{2}", label);
+function getLargeImage() {
+  return 'https://raw.githubusercontent.com/stackery/alexa-reinvent-quiz/master/src/img/alexa-reinvent-large.png';
 }
 
 function convertDate(date) {
@@ -411,6 +399,10 @@ function convertDate(date) {
   const newDate = new Date(fixedDate);
 
   return newDate.toLocaleString('en-us', { month: "long" }) + ' ' + newDate.getFullYear();
+}
+
+function getBackgroundImage() {
+  return getLargeImage();
 }
 
 function getSpeechDescription(item) {
