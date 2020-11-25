@@ -97,7 +97,7 @@
             },
             {
               "name": {
-                "value": "SimpleDB"
+                "value": "Simpledb"
               }
             },
             {
@@ -117,7 +117,7 @@
             },
             {
               "name": {
-                "value": "CloudWatch"
+                "value": "Cloudwatch"
               }
             },
             {
@@ -132,7 +132,7 @@
             },
             {
               "name": {
-                "value": "CloudFront"
+                "value": "Cloudfront"
               }
             },
             {
@@ -152,12 +152,12 @@
             },
             {
               "name": {
-                "value": "CloudFormation"
+                "value": "Cloudformation"
               }
             },
             {
               "name": {
-                "value": "Identity & Access Management"
+                "value": "Identity And Access Management"
               }
             },
             {
@@ -172,12 +172,12 @@
             },
             {
               "name": {
-                "value": "ElastiCache"
+                "value": "Elasticache"
               }
             },
             {
               "name": {
-                "value": "DynamoDB"
+                "value": "Dynamodb"
               }
             },
             {
@@ -192,7 +192,7 @@
             },
             {
               "name": {
-                "value": "CloudTrail"
+                "value": "Cloudtrail"
               }
             },
             {
@@ -217,7 +217,7 @@
             },
             {
               "name": {
-                "value": "API Gateway"
+                "value": "Api Gateway"
               }
             },
             {
@@ -252,7 +252,7 @@
             },
             {
               "name": {
-                "value": "CodeBuild"
+                "value": "Codebuild"
               }
             },
             {
@@ -277,7 +277,7 @@
             },
             {
               "name": {
-                "value": "AppSync"
+                "value": "Appsync"
               }
             },
             {
@@ -302,7 +302,7 @@
             },
             {
               "name": {
-                "value": "reInvent"
+                "value": "reinvent"
               }
             }
           ]
@@ -337,17 +337,17 @@
             },
             {
               "name": {
-                "value": "Management & Governance"
+                "value": "Management and Governance"
               }
             },
             {
               "name": {
-                "value": "Networking & Content Delivery"
+                "value": "Networking and Content Delivery"
               }
             },
             {
               "name": {
-                "value": "Security, Identity & Compliance"
+                "value": "Security, Identity and Compliance"
               }
             },
             {
@@ -377,7 +377,10 @@
           "values": [
             {
               "name": {
-                "value": "S3"
+                "value": "S3",
+                "synonyms": [
+                  "s. three"
+                ]
               }
             },
             {
@@ -387,7 +390,10 @@
             },
             {
               "name": {
-                "value": "EC2"
+                "value": "EC2",
+                "synonyms": [
+                  "e.c. two"
+                ]
               }
             },
             {
@@ -452,72 +458,13 @@
             },
             {
               "name": {
-                "value": "No abbreviation"
-              }
-            },
-            {
-              "name": {
-                "value": "No abbreviation, because the CW is a TV network, not an AWS service"
-              }
-            },
-            {
-              "name": {
-                "value": "No abbreviation here, just yet another service that starts with cloud"
-              }
-            },
-            {
-              "name": {
-                "value": "No abbreviation. It's like Route 66, but with more traffic"
-              }
-            },
-            {
-              "name": {
-                "value": "No abbreviation. Not the one Jack climbed"
-              }
-            },
-            {
-              "name": {
-                "value": "No abbreviation, but I am so happy IAM exists"
-              }
-            },
-            {
-              "name": {
-                "value": "No abbreviation, just a direct connection"
-              }
-            },
-            {
-              "name": {
-                "value": "No abbreviation here, just another elastic service. What are the odds?"
-              }
-            },
-            {
-              "name": {
-                "value": "No abbreviation here, but amazingly this service does not include the words cloud or elastic"
-              }
-            },
-            {
-              "name": {
-                "value": "No abbreviation here, but it's a service that doesn't start with simple, who knew?"
-              }
-            },
-            {
-              "name": {
-                "value": "No abbreviation here, but there's no need to go incognito with Cognito"
-              }
-            },
-            {
-              "name": {
-                "value": "No abbreviation here, just the little function that started it all"
-              }
-            },
-            {
-              "name": {
-                "value": "No abbreviation. Actually, I suppose API is an abbreviation"
-              }
-            },
-            {
-              "name": {
-                "value": "No abbreviation. Did you know that the first re:Invent only had 6,000 attendees, while the last one had 60,000. Talk about ten ex-ing!"
+                "value": "None",
+                "synonyms": [
+                  "no abbreviation",
+                  "No abbreviation",
+                  "none",
+                  "It doesn't have one"
+                ]
               }
             }
           ]

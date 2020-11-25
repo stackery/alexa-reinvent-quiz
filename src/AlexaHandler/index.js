@@ -293,56 +293,103 @@ const ErrorHandler = {
 
 /* CONSTANTS */
 const skillBuilder = Alexa.SkillBuilders.custom();
-const imagePath = "";
-const backgroundImagePath = ""
 const speechConsCorrect = ['Booya', 'All righty', 'Bam', 'Bazinga', 'Bingo', 'Boom', 'Bravo', 'Cha Ching', 'Cheers', 'Dynomite', 'Hip hip hooray', 'Hurrah', 'Hurray', 'Huzzah', 'Oh dear.  Just kidding.  Hurray', 'Kaboom', 'Kaching', 'Oh snap', 'Phew','Righto', 'Way to go', 'Well done', 'Whee', 'Woo hoo', 'Yay', 'Wowza', 'Yowsa'];
 const speechConsWrong = ['Argh', 'Aw man', 'Blarg', 'Blast', 'Boo', 'Bummer', 'Darn', "D'oh", 'Dun dun dun', 'Eek', 'Honk', 'Le sigh', 'Mamma mia', 'Oh boy', 'Oh dear', 'Oof', 'Ouch', 'Ruh roh', 'Shucks', 'Uh oh', 'Wah wah', 'Whoops a daisy', 'Yikes'];
+// Huge thanks to Jerry Hartgrove for the following data https://www.awsgeek.com/AWS-History/
 const data = [
-  {ServiceName: 'Simple Storage Service', ServiceType: 'Storage', LaunchDate: '20-0603', Abbreviation: 'S3'},
+  {ServiceName: 'Simple Storage Service', ServiceType: 'Storage', LaunchDate: '2006-03', Abbreviation: 'S3'},
   {ServiceName: 'Simple Queue Service', ServiceType: 'Application Integration', LaunchDate: '2006-07', Abbreviation: 'SQS'},
-  {ServiceName: 'SimpleDB', ServiceType: 'Database', LaunchDate: '2007-12', Abbreviation: 'SimpleDB'},
+  {ServiceName: 'Simpledb', ServiceType: 'Database', LaunchDate: '2007-12', Abbreviation: 'None'},
   {ServiceName: 'Elastic Block Store', ServiceType: 'Compute', LaunchDate: '2008-08', Abbreviation: 'EBS'},
   {ServiceName: 'Elastic Compute Cloud', ServiceType: 'Storage', LaunchDate: '2008-10', Abbreviation: 'EC2'},
   {ServiceName: 'Elastic Map Reduce', ServiceType: 'Analytics', LaunchDate: '2009-04', Abbreviation: 'EMR'},
-  {ServiceName: 'CloudWatch', ServiceType: 'Management & Governance', LaunchDate: '2009-05', Abbreviation: 'No abbreviation, because the CW is a TV network, not an AWS service'},
-  {ServiceName: 'Elastic Load Balancing', ServiceType: 'Networking & Content Delivery', LaunchDate: '2009-05', Abbreviation: 'ELB'},
+  {ServiceName: 'Cloudwatch', ServiceType: 'Management and Governance', LaunchDate: '2009-05', Abbreviation: 'None'},
+  {ServiceName: 'Elastic Load Balancing', ServiceType: 'Networking and Content Delivery', LaunchDate: '2009-05', Abbreviation: 'ELB'},
   {ServiceName: 'Simple Notification Service', ServiceType: 'Application Integration', LaunchDate: '2010-04', Abbreviation: 'SNS'},
-  {ServiceName: 'CloudFront', ServiceType: 'Networking & Content Delivery', LaunchDate: '2010-11', Abbreviation: 'No abbreviation here, just yet another service that starts with cloud'},
-  {ServiceName: 'Route 53', ServiceType: 'Networking & Content Delivery', LaunchDate: '2010-12', Abbreviation: "No abbreviation. It's like Route 66, but with more traffic"},
-  {ServiceName: 'Elastic Beanstalk', ServiceType: 'Compute', LaunchDate: '2011-01', Abbreviation: 'No abbreviation. Not the one Jack climbed'},
+  {ServiceName: 'Cloudfront', ServiceType: 'Networking and Content Delivery', LaunchDate: '2010-11', Abbreviation: 'None'},
+  {ServiceName: 'Route 53', ServiceType: 'Networking and Content Delivery', LaunchDate: '2010-12', Abbreviation: 'None'},
+  {ServiceName: 'Elastic Beanstalk', ServiceType: 'Compute', LaunchDate: '2011-01', Abbreviation: 'None'},
   {ServiceName: 'Simple Email Service', ServiceType: 'Application Integration', LaunchDate: '2011-01', Abbreviation: 'SES'},
-  {ServiceName: 'CloudFormation', ServiceType: 'Management & Governance', LaunchDate: '2011-02', Abbreviation: 'No abbreviation here, just yet another service that starts with cloud'},
-  {ServiceName: 'Identity & Access Management', ServiceType: 'Security, Identity & Compliance', LaunchDate: '2011-05', Abbreviation: 'No abbreviation, but I am so happy IAM exists'},
-  {ServiceName: 'Virtual Public Cloud', ServiceType: 'Networking & Content Delivery', LaunchDate: '2011-08', Abbreviation: 'VPC'},
-  {ServiceName: 'Direct Connect', ServiceType: 'Networking & Content Delivery', LaunchDate: '2011-08', Abbreviation: 'No abbreviation, just a direct connection.'},
-  {ServiceName: 'ElastiCache', ServiceType: 'Database', LaunchDate: '2011-08', Abbreviation: 'No abbreviation here, just another elastic service. What are the odds?'},
-  {ServiceName: 'DynamoDB', ServiceType: 'Database', LaunchDate: '2012-01', Abbreviation: 'No abbreviation here, but amazingly this service does not include the words cloud or elastic'},
-  {ServiceName: 'CloudSearch', ServiceType: 'Analytics', LaunchDate: '2012-04', Abbreviation: 'No abbreviation here, just yet another service that starts with cloud'},
-  {ServiceName: 'Redshift', ServiceType: 'Database', LaunchDate: '2012-11', Abbreviation: 'No abbreviation here, but amazingly this service does not include the words cloud or elastic'},
+  {ServiceName: 'Cloudformation', ServiceType: 'Management and Governance', LaunchDate: '2011-02', Abbreviation: 'None'},
+  {ServiceName: 'Identity And Access Management', ServiceType: 'Security, Identity and Compliance', LaunchDate: '2011-05', Abbreviation: 'None'},
+  {ServiceName: 'Virtual Public Cloud', ServiceType: 'Networking and Content Delivery', LaunchDate: '2011-08', Abbreviation: 'VPC'},
+  {ServiceName: 'Direct Connect', ServiceType: 'Networking and Content Delivery', LaunchDate: '2011-08', Abbreviation: 'None'},
+  {ServiceName: 'Elasticache', ServiceType: 'Database', LaunchDate: '2011-08', Abbreviation: 'None'},
+  {ServiceName: 'Dynamodb', ServiceType: 'Database', LaunchDate: '2012-01', Abbreviation: 'None'},
+  {ServiceName: 'Cloudsearch', ServiceType: 'Analytics', LaunchDate: '2012-04', Abbreviation: 'None'},
+  {ServiceName: 'Redshift', ServiceType: 'Database', LaunchDate: '2012-11', Abbreviation: 'None'},
   {ServiceName: 'Relational Database', ServiceType: 'Database', LaunchDate: '2013-06', Abbreviation: 'RDS'},
-  {ServiceName: 'CloudTrail', ServiceType: 'Management & Governance', LaunchDate: '2013-11', Abbreviation: 'No abbreviation here, just yet another service that starts with cloud'},
-  {ServiceName: 'Kinesis', ServiceType: 'Analytics', LaunchDate: '2013-12', Abbreviation: "No abbreviation here, but it's a service that doesn't start with simple, who knew?"},
-  {ServiceName: 'Cognito', ServiceType: 'Security, Identity & Compliance', LaunchDate: '2014-07', Abbreviation: "No abbreviation here, but there's no need to go incognito with Cognito"},
-  {ServiceName: 'Lambda', ServiceType: 'Compute', LaunchDate: '2015-04', Abbreviation: 'No abbreviation here, just the little function that started it all'},
+  {ServiceName: 'Cloudtrail', ServiceType: 'Management and Governance', LaunchDate: '2013-11', Abbreviation: 'None'},
+  {ServiceName: 'Kinesis', ServiceType: 'Analytics', LaunchDate: '2013-12', Abbreviation: 'None'},
+  {ServiceName: 'Cognito', ServiceType: 'Security, Identity and Compliance', LaunchDate: '2014-07', Abbreviation: 'None'},
+  {ServiceName: 'Lambda', ServiceType: 'Compute', LaunchDate: '2015-04', Abbreviation: 'None'},
   {ServiceName: 'Elastic Container Service', ServiceType: 'Compute', LaunchDate: '2015-04', Abbreviation: 'ECS'},
-  {ServiceName: 'API Gateway', ServiceType: 'Networking & Content Delivery', LaunchDate: '2015-07', Abbreviation: 'No abbreviation. Actually, I suppose API is an abbreviation'},
-  {ServiceName: 'Elasticsearch Service', ServiceType: 'Analytics', LaunchDate: '2015-10', Abbreviation: 'No abbreviation here, just another elastic service. What are the odds?'},
-  {ServiceName: 'Web Application Firewall', ServiceType: 'Security, Identity & Compliance', LaunchDate: '2015-10', Abbreviation: 'WAF'},
+  {ServiceName: 'Api Gateway', ServiceType: 'Networking and Content Delivery', LaunchDate: '2015-07', Abbreviation: 'None'},
+  {ServiceName: 'Elasticsearch Service', ServiceType: 'Analytics', LaunchDate: '2015-10', Abbreviation: 'None'},
+  {ServiceName: 'Web Application Firewall', ServiceType: 'Security, Identity and Compliance', LaunchDate: '2015-10', Abbreviation: 'WAF'},
   {ServiceName: 'Elastic Container Registry', ServiceType: 'Compute', LaunchDate: '2015-12', Abbreviation: 'ECR'},
   {ServiceName: 'Elastic File System', ServiceType: 'Compute', LaunchDate: '2015-12', Abbreviation: 'EFS'},
-  {ServiceName: 'Rekognition', ServiceType: 'Machine Learning', LaunchDate: '2016-11', Abbreviation: 'No abbreviation here, but amazingly this service does not include the words cloud or elastic'},
-  {ServiceName: 'Lightsail', ServiceType: 'Compute', LaunchDate: '2016-11', Abbreviation: 'No abbreviation here, but amazingly this service does not include the words cloud or elastic'},
-  {ServiceName: 'CodeBuild', ServiceType: 'Developer Tools', LaunchDate: '2016-12', Abbreviation: 'No abbreviation here, but amazingly this service does not include the words cloud or elastic'},
-  {ServiceName: 'Step Functions', ServiceType: 'Application Integration', LaunchDate: '2016-12', Abbreviation: 'No abbreviation here, but amazingly this service does not include the words cloud or elastic'},
-  {ServiceName: 'Amplify', ServiceType: 'Mobile', LaunchDate: '2017-11', Abbreviation: 'No abbreviation here, but amazingly this service does not include the words cloud or elastic'},
+  {ServiceName: 'Rekognition', ServiceType: 'Machine Learning', LaunchDate: '2016-11', Abbreviation: 'None'},
+  {ServiceName: 'Lightsail', ServiceType: 'Compute', LaunchDate: '2016-11', Abbreviation: 'None'},
+  {ServiceName: 'Codebuild', ServiceType: 'Developer Tools', LaunchDate: '2016-12', Abbreviation: 'None'},
+  {ServiceName: 'Step Functions', ServiceType: 'Application Integration', LaunchDate: '2016-12', Abbreviation: 'None'},
+  {ServiceName: 'Amplify', ServiceType: 'Mobile', LaunchDate: '2017-11', Abbreviation: 'None'},
   {ServiceName: 'Serverless Application Repository', ServiceType: 'Compute', LaunchDate: '2018-02', Abbreviation: 'SAR'},
-  {ServiceName: 'Secrets Manager', ServiceType: 'Security, Identity & Compliance', LaunchDate: '2018-04', Abbreviation: 'No abbreviation here, but amazingly this service does not include the words cloud or elastic'},
-  {ServiceName: 'AppSync', ServiceType: 'Mobile', LaunchDate: '2018-04', Abbreviation: 'No abbreviation here, but amazingly this service does not include the words cloud or elastic'},
-  {ServiceName: 'Neptune', ServiceType: 'Database', LaunchDate: '2018-05', Abbreviation: 'No abbreviation here, but amazingly this service does not include the words cloud or elastic'},
+  {ServiceName: 'Secrets Manager', ServiceType: 'Security, Identity and Compliance', LaunchDate: '2018-04', Abbreviation: 'None'},
+  {ServiceName: 'Appsync', ServiceType: 'Mobile', LaunchDate: '2018-04', Abbreviation: 'None'},
+  {ServiceName: 'Neptune', ServiceType: 'Database', LaunchDate: '2018-05', Abbreviation: 'None'},
   {ServiceName: 'Elastic Kubernetes Service', ServiceType: 'Compute', LaunchDate: '2018-06', Abbreviation: 'EKS'},
-  {ServiceName: 'Event Bridge', ServiceType: 'Application Integration', LaunchDate: '2019-07', Abbreviation: 'No abbreviation here, but amazingly this service does not include the words cloud or elastic'},
-  {ServiceName: 'Timestream', ServiceType: 'Database', LaunchDate: '2020-09', Abbreviation: 'No abbreviation here, but amazingly this service does not include the words cloud or elastic'},
-  {ServiceName: 'reInvent', ServiceType: 'Conference', LaunchDate: '2012-03', Abbreviation: 'No abbreviation. Did you know that the first re:Invent only had 6,000 attendees, while the last one had 60,000. Talk about ten ex-ing!'}
+  {ServiceName: 'Event Bridge', ServiceType: 'Application Integration', LaunchDate: '2019-07', Abbreviation: 'None'},
+  {ServiceName: 'Timestream', ServiceType: 'Database', LaunchDate: '2020-09', Abbreviation: 'None'},
+  {ServiceName: 'reinvent', ServiceType: 'Conference', LaunchDate: '2012-03', Abbreviation: 'None'}
+];
+
+const funFacts = [
+  {SimpleStorageService: "S3 was the first AWS service released, isnt that something!"},
+  {SimpleQueueService: "SQS was the first AWS service announced, but the second released."},
+  {SimpleDB: "Oh hey, yet another simple service thats not so simple."},
+  {ElasticBlockStore: "EBS has been trying to catch up to S3 from the start."},
+  {ElasticComputeCloud: "Oh look, another elastic service. What are the odds?"},
+  {ElasticMapReduce: "Oh look, another elastic service. What are the odds?"},
+  {CloudWatch: "No abbreviation, because the CW is a TV network, not an AWS service"},
+  {ElasticLoadBalancing: "Oh look, another elastic service. What are the odds?"},
+  {SimpleNotificationService: "Oh hey, yet another simple service thats not so simple."},
+  {CloudFront: "Yet another service that starts with cloud"},
+  {Route53: "It's like Route 66, but with more traffic"},
+  {ElasticBeanstalk: "Not the beanstalk Jack climbed"},
+  {SimpleEmailService: "This simple service actually is pretty simple"},
+  {CloudFormation: "Yet another service that starts with cloud"},
+  {IdentityAndAccessManagement: "I am so happy IAM exists"},
+  {VirtualPublicCloud: "VPCs. Also known as AWS's money makers."},
+  {DirectConnect: "Who doesn't like a direct connection?"},
+  {ElastiCache: "Oh look, another elastic service. What are the odds?"},
+  {DynamoDB: "Amazingly this service does not include the words cloud or elastic"},
+  {CloudSearch: "Yet another service that starts with cloud"},
+  {Redshift: "Amazingly this service does not include the words cloud or elastic"},
+  {RelationalDatabase: "When no sequel just won't do."},
+  {CloudTrail: "Yet another service that starts with cloud"},
+  {Kinesis: "It's a service that doesn't start with the word simple, who knew?"},
+  {Cognito: "There's no need to go incognito with Cognito"},
+  {Lambda: "Oh hey, it's the little function that started it all"},
+  {ElasticContainerService: "Oh look, another elastic service. What are the odds?"},
+  {ApiGateway: "Actually, I suppose API is an abbreviation"},
+  {ElasticsearchService: "Oh look, another elastic service. What are the odds?"},
+  {WebApplicationFirewall: "The security guard of the internet"},
+  {ElasticContainerRegistry: "Oh look, another elastic service. What are the odds?"},
+  {ElasticFileSystem: "Oh look, another elastic service. What are the odds?"},
+  {Rekognition: "Amazingly this service does not include the words cloud or elastic"},
+  {Lightsail: "Amazingly this service does not include the words cloud or elastic"},
+  {CodeBuild: "Amazingly this service does not include the words cloud or elastic"},
+  {StepFunctions: "Amazingly this service does not include the words cloud or elastic"},
+  {Amplify: "Amazingly this service does not include the words cloud or elastic"},
+  {ServerlessApplicationRepository: "This is the only serverless service that actually contains the word serverless!"},
+  {SecretsManager: "Amazingly this service does not include the words cloud or elastic"},
+  {AppSync: "Amazingly this service does not include the words cloud or elastic"},
+  {Neptune: "Amazingly this service does not include the words cloud or elastic"},
+  {ElasticKubernetesService: "Oh look, another elastic service. What are the odds?"},
+  {EventBridge: "Amazingly this service does not include the words cloud or elastic"},
+  {Timestream: "Amazingly this service does not include the words cloud or elastic"},
+  {reInvent: "Did you know that the first re:Invent only had 6,000 attendees, while the last one had 60,000. Talk about ten ex-ing!"}
 ];
 
 const states = {
@@ -406,10 +453,10 @@ function getBackgroundImage() {
 }
 
 function getSpeechDescription(item) {
-  if (item.Abbreviation.includes('No abbreviation')) {
-    return `${item.ServiceName} is a ${item.ServiceType} service, first launched in ${convertDate(item.LaunchDate)}. ${item.Abbreviation}. I've added ${item.ServiceName} to your Alexa app.  Which other service would you like to know about?`;
+  if (item.Abbreviation === 'None') {
+    return `${item.ServiceName} is a ${item.ServiceType} service, first launched in ${convertDate(item.LaunchDate)}. ${funFacts[item.ServiceName.replace(/\s/g, '')]}. I've added ${item.ServiceName} to your Alexa app.  Which other service would you like to know about?`;
   } else {
-    return `${item.ServiceName} is a ${item.ServiceType} service, first launched in ${convertDate(item.LaunchDate)}. Its abbreviation is <say-as interpret-as='spell-out'>${item.Abbreviation}</say-as>. I've added ${item.ServiceName} to your Alexa app.  Which other service would you like to know about?`;
+    return `${item.ServiceName} is a ${item.ServiceType} service, first launched in ${convertDate(item.LaunchDate)}. Its abbreviation is <say-as interpret-as='spell-out'>${item.Abbreviation}</say-as>. ${funFacts[item.ServiceName.replace(/\s/g, '')]}. I've added ${item.ServiceName} to your Alexa app.  Which other service would you like to know about?`;
   }
 }
 
@@ -430,11 +477,14 @@ function getQuestionWithoutOrdinal(property, item) {
 function getAnswer(property, item) {
   switch (property) {
     case 'Abbreviation':
-      if (item[property].includes('No abbreviation')) {
-        return `${item[property]}. `;
+      if (item[property] === 'None') {
+        return `${item.ServiceName} does not have an abbreviation. `;
       } else {
         return `The ${formatCasing(property)} of ${item.ServiceName} is <say-as interpret-as='spell-out'>${item[property]}</say-as>. `;
       }
+
+    case 'LaunchDate':
+      return `The ${formatCasing(property)} of ${item.ServiceName} is ${convertDate(item[property])}. `;
       
     default:
       return `The ${formatCasing(property)} of ${item.ServiceName} is ${item[property]}. `;
@@ -472,9 +522,7 @@ function askQuestion(handlerInput) {
 function compareSlots(slots, value) {
   for (const slot in slots) {
     if (Object.prototype.hasOwnProperty.call(slots, slot) && slots[slot].value !== undefined) {
-      // We want 'No abbreviation' to be a correct answer for items that start with 'No abbreviation'
-      // rather than the whole snarky answer, so partial answers will be accepted
-      if (value.toString().toLowerCase().contains(slots[slot].value.toString().toLowerCase())) {
+      if (slots[slot].value.toString().toLowerCase() === value.toString().toLowerCase()) {
         return true;
       }
     }
