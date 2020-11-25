@@ -344,53 +344,53 @@ const data = [
   {ServiceName: 'reinvent', ServiceType: 'Conference', LaunchDate: '2012-03', Abbreviation: 'None'}
 ];
 
-const funFacts = [
-  {SimpleStorageService: "S3 was the first AWS service released, isnt that something!"},
-  {SimpleQueueService: "SQS was the first AWS service announced, but the second released."},
-  {SimpleDB: "Oh hey, yet another simple service thats not so simple."},
-  {ElasticBlockStore: "EBS has been trying to catch up to S3 from the start."},
-  {ElasticComputeCloud: "Oh look, another elastic service. What are the odds?"},
-  {ElasticMapReduce: "Oh look, another elastic service. What are the odds?"},
-  {CloudWatch: "No abbreviation, because the CW is a TV network, not an AWS service"},
-  {ElasticLoadBalancing: "Oh look, another elastic service. What are the odds?"},
-  {SimpleNotificationService: "Oh hey, yet another simple service thats not so simple."},
-  {CloudFront: "Yet another service that starts with cloud"},
-  {Route53: "It's like Route 66, but with more traffic"},
-  {ElasticBeanstalk: "Not the beanstalk Jack climbed"},
-  {SimpleEmailService: "This simple service actually is pretty simple"},
-  {CloudFormation: "Yet another service that starts with cloud"},
-  {IdentityAndAccessManagement: "I am so happy IAM exists"},
-  {VirtualPublicCloud: "VPCs. Also known as AWS's money makers."},
-  {DirectConnect: "Who doesn't like a direct connection?"},
-  {ElastiCache: "Oh look, another elastic service. What are the odds?"},
-  {DynamoDB: "Amazingly this service does not include the words cloud or elastic"},
-  {CloudSearch: "Yet another service that starts with cloud"},
-  {Redshift: "Amazingly this service does not include the words cloud or elastic"},
-  {RelationalDatabase: "When no sequel just won't do."},
-  {CloudTrail: "Yet another service that starts with cloud"},
-  {Kinesis: "It's a service that doesn't start with the word simple, who knew?"},
-  {Cognito: "There's no need to go incognito with Cognito"},
-  {Lambda: "Oh hey, it's the little function that started it all"},
-  {ElasticContainerService: "Oh look, another elastic service. What are the odds?"},
-  {ApiGateway: "Actually, I suppose API is an abbreviation"},
-  {ElasticsearchService: "Oh look, another elastic service. What are the odds?"},
-  {WebApplicationFirewall: "The security guard of the internet"},
-  {ElasticContainerRegistry: "Oh look, another elastic service. What are the odds?"},
-  {ElasticFileSystem: "Oh look, another elastic service. What are the odds?"},
-  {Rekognition: "Amazingly this service does not include the words cloud or elastic"},
-  {Lightsail: "Amazingly this service does not include the words cloud or elastic"},
-  {CodeBuild: "Amazingly this service does not include the words cloud or elastic"},
-  {StepFunctions: "Amazingly this service does not include the words cloud or elastic"},
-  {Amplify: "Amazingly this service does not include the words cloud or elastic"},
-  {ServerlessApplicationRepository: "This is the only serverless service that actually contains the word serverless!"},
-  {SecretsManager: "Amazingly this service does not include the words cloud or elastic"},
-  {AppSync: "Amazingly this service does not include the words cloud or elastic"},
-  {Neptune: "Amazingly this service does not include the words cloud or elastic"},
-  {ElasticKubernetesService: "Oh look, another elastic service. What are the odds?"},
-  {EventBridge: "Amazingly this service does not include the words cloud or elastic"},
-  {Timestream: "Amazingly this service does not include the words cloud or elastic"},
-  {reInvent: "Did you know that the first re:Invent only had 6,000 attendees, while the last one had 60,000. Talk about ten ex-ing!"}
-];
+const funFacts = {
+  SimpleStorageService: "S3 was the first AWS service released, isnt that something!",
+  SimpleQueueService: "SQS was the first AWS service announced, but the second released.",
+  Simpledb: "Oh hey, yet another simple service thats not so simple.",
+  ElasticBlockStore: "EBS has been trying to catch up to S3 from the start.",
+  ElasticComputeCloud: "Oh look, another elastic service. What are the odds?",
+  ElasticMapReduce: "Oh look, another elastic service. What are the odds?",
+  Cloudwatch: "No abbreviation, because the CW is a TV network, not an AWS service",
+  ElasticLoadBalancing: "Oh look, another elastic service. What are the odds?",
+  SimpleNotificationService: "Oh hey, yet another simple service thats not so simple.",
+  Cloudfront: "Yet another service that starts with cloud",
+  Route53: "It's like Route 66, but with more traffic",
+  ElasticBeanstalk: "Not the beanstalk Jack climbed",
+  SimpleEmailService: "This simple service actually is pretty simple",
+  Cloudformation: "Yet another service that starts with cloud",
+  IdentityAndAccessManagement: "I am so happy IAM exists",
+  VirtualPublicCloud: "VPCs. Also known as AWS's money makers.",
+  DirectConnect: "Who doesn't like a direct connection?",
+  Elasticache: "Oh look, another elastic service. What are the odds?",
+  Dynamodb: "Amazingly this service does not include the words cloud or elastic",
+  Cloudsearch: "Yet another service that starts with cloud",
+  Redshift: "Amazingly this service does not include the words cloud or elastic",
+  RelationalDatabase: "When no sequel just won't do.",
+  Cloudtrail: "Yet another service that starts with cloud",
+  Kinesis: "It's a service that doesn't start with the word simple, who knew?",
+  Cognito: "There's no need to go incognito with Cognito",
+  Lambda: "Oh hey, it's the little function that started it all",
+  ElasticContainerService: "Oh look, another elastic service. What are the odds?",
+  ApiGateway: "Actually, I suppose API is an abbreviation",
+  ElasticsearchService: "Oh look, another elastic service. What are the odds?",
+  WebApplicationFirewall: "The security guard of the internet",
+  ElasticContainerRegistry: "Oh look, another elastic service. What are the odds?",
+  ElasticFileSystem: "Oh look, another elastic service. What are the odds?",
+  Rekognition: "Amazingly this service does not include the words cloud or elastic",
+  Lightsail: "Amazingly this service does not include the words cloud or elastic",
+  Codebuild: "Amazingly this service does not include the words cloud or elastic",
+  StepFunctions: "Amazingly this service does not include the words cloud or elastic",
+  Amplify: "Amazingly this service does not include the words cloud or elastic",
+  ServerlessApplicationRepository: "This is the only serverless service that actually contains the word serverless!",
+  SecretsManager: "Amazingly this service does not include the words cloud or elastic",
+  Appsync: "Amazingly this service does not include the words cloud or elastic",
+  Neptune: "Amazingly this service does not include the words cloud or elastic",
+  ElasticKubernetesService: "Oh look, another elastic service. What are the odds?",
+  EventBridge: "Amazingly this service does not include the words cloud or elastic",
+  Timestream: "Amazingly this service does not include the words cloud or elastic",
+  reinvent: "Did you know that the first re:Invent only had 6,000 attendees, while the last one had 60,000. Talk about ten ex-ing!"
+};
 
 const states = {
   START: `_START`,
@@ -426,7 +426,11 @@ function getCurrentScore(score, counter) {
 }
 
 function getFinalScore(score, counter) {
-  return `Your final score is ${score} out of ${counter}. `;
+  if (score === counter) {
+    return `Your final score is ${score} out of ${counter}. <say-as interpret-as='interjection'>A perfect score!!</say-as><break strength='strong'/> Is your name Werner? `;
+  } else {
+    return `Your final score is ${score} out of ${counter}. `;
+  }
 }
 
 function getCardTitle(item) {
